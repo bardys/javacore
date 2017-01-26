@@ -1,0 +1,2 @@
+# javacore
+training_repository
