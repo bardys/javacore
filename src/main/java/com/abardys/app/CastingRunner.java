@@ -3,7 +3,7 @@ package com.abardys.app;
 /**
  * Created by anbar on 02-Feb-17.
  */
-public class Runner {
+public class CastingRunner {
     public static void main(String[] args) {
         WideningCasting casting1 = new WideningCasting();
         casting1.widening();

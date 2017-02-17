@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by anbar on 16-Feb-17.
  */
-public class RunnerTriangle {
+public class TriangleRunner {
     public static void main(String[] args) {
         Triangle runTriangle = new Triangle();
         Scanner scanner = new Scanner(System.in);
