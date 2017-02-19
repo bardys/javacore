@@ -8,7 +8,7 @@ import static com.abardys.app.lesson4.СompareCircleArea.calculateBigger;
  * Created by anbar on 17-Feb-17.
  */
 public class CompareCircleAreaRunner {
-    public static void main(String[] args) {
+    public static void main() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input radius1: ");
         double radius1 = scanner.nextDouble();
