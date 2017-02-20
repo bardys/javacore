@@ -12,8 +12,9 @@ import java.util.Scanner;
  */
 public class Lesson4Runner {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        while(true) {
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+
             System.out.println("Enter program number: 1, 2 or 3\nTo Calculate Circle Area enter 1;\nTo Сompare Circle Area enter 2;\nTo Verify Is Triangle Right-Angled enter 3\nYour choice: ");
             try {
                 int choice = scanner.nextInt();
@@ -26,6 +27,16 @@ public class Lesson4Runner {
                 } else {
                     System.out.println("Wrong enter");
                 }
+//                switch (choice) {
+//                    case 1:
+//                        CalculateCircleAreaRunner.main();
+//                    case 2:
+//                        CompareCircleAreaRunner.main();
+//                    case 3:
+//                        TriangleRunner.main();
+//                    default:
+//                        System.out.println("Wrong enter");
+//                }
             } catch (Exception e) {
                 System.out.println("Wrong enter");
             }

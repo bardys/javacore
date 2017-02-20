@@ -11,9 +11,6 @@ public class MathFunkTest {
         int a = 2, b = 3, expRes = 6;
         Assert.assertEquals(expRes, MathFunk.multiply(a, b));
     }
-        @Test
-        public void multiplyFailedTest(){
-                int a = 2, b = 3, expRes = 7;
-                Assert.assertEquals(expRes, MathFunk.multiply(a, b));
-    }
+
+
 }
