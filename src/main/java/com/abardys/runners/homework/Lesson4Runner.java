@@ -1,10 +1,9 @@
-package com.abardys.app.runners.homework;
+package com.abardys.runners.homework;
 
 import com.abardys.app.lesson4.CalculateCircleAreaRunner;
 import com.abardys.app.lesson4.CompareCircleAreaRunner;
 import com.abardys.app.lesson4.TriangleRunner;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
