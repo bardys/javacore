@@ -7,7 +7,7 @@ import com.abardys.app.WideningCasting;
  * Created by anbar on 02-Feb-17.
  */
 public class CastingRunner {
-    public static void main(String[] args) {
+    public static void main() {
         WideningCasting casting1 = new WideningCasting();
         casting1.widening();
 
