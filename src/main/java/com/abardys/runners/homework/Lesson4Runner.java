@@ -1,8 +1,8 @@
 package com.abardys.runners.homework;
 
-import com.abardys.app.lesson4.CalculateCircleAreaRunner;
-import com.abardys.app.lesson4.CompareCircleAreaRunner;
-import com.abardys.app.lesson4.TriangleRunner;
+import com.abardys.runners.CalculateCircleAreaRunner;
+import com.abardys.runners.CompareCircleAreaRunner;
+import com.abardys.runners.TriangleRunner;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.abardys;
+package com.abardys.app.lesson3;
 import com.abardys.app.lesson3.MathFunk;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
@@ -17,7 +17,7 @@ public class MathFunkTest {
     MathFunk mathFunk;
 
     static int int1 = 0;
-    static final String RESOURCES_PATH = "src/test/resources/";
+    static final String RESOURCES_PATH = "src/test/java/resources/";
 
 
     @Before
@@ -28,8 +28,8 @@ public class MathFunkTest {
 
     @FileParameters(RESOURCES_PATH + "multiply_parameters.csv")
     @Test
-    public void multiplyTest(int a, int b, int expRes) {
-        Assert.assertEquals(expRes, MathFunk.multiply(a, b));
+    public void multiplyTest(int a, int b, int expRes, boolean isTrue) {
+        Assert.assertEquals(isTrue, expRes == MathFunk.multiply(a, b));
     }
 
     @Test

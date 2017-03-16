@@ -1,4 +1,7 @@
-package com.abardys.app;
+package com.abardys.runners;
+
+import com.abardys.app.NarrowingCasting;
+import com.abardys.app.WideningCasting;
 
 /**
  * Created by anbar on 02-Feb-17.

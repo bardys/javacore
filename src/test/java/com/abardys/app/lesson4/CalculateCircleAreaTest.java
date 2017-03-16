@@ -1,12 +1,19 @@
 package com.abardys.app.lesson4;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by anbar on 20-Feb-17.
  */
 public class CalculateCircleAreaTest {
+
+    @Before
+    public void setUp() {
+        CalculateCircleArea сalculateCircleArea = new CalculateCircleArea();
+    }
+
     @Test
     public void radius1Test(){
         String radius = "1";

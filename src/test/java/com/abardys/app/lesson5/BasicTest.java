@@ -1,4 +1,4 @@
-package com.abardys.app.Lesson5;
+package com.abardys.app.lesson5;
 
 import org.junit.*;
 import org.junit.runners.MethodSorters;

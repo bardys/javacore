@@ -1,4 +1,6 @@
-package com.abardys.app.lesson4;
+package com.abardys.runners;
+
+import com.abardys.app.lesson4.СompareCircleArea;
 
 import java.util.Scanner;
 

@@ -1,12 +1,18 @@
 package com.abardys.app.lesson4;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by anbar on 20-Feb-17.
  */
 public class CompareCircleAreaTest {
+
+    @Before
+    public void setUp() {
+        СompareCircleArea compareCircleArea = new СompareCircleArea();
+    }
 
     @Test
     public void FirstBigger21Test() {
