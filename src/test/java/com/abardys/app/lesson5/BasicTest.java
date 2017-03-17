@@ -53,6 +53,7 @@ public class BasicTest {
         Assert.assertArrayEquals(expectedResults, inputData);
     }
 
+    @Ignore("Infinity test")
     @Test(timeout = 1000)
     public void infinityTest() {
         while (true) ;

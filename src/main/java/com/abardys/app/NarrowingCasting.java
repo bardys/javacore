@@ -7,9 +7,11 @@ public class NarrowingCasting {
 
 
 
-    public float narrowing(float float1, double double1){
+    public static float narrowing(float float1, double double1){
         float1 = (float)double1;
         System.out.println(float1);
         return float1;
     }
+
+
 }
