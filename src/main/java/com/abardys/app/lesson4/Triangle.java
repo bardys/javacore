@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by anbar on 16-Feb-17.
  */
 public class Triangle {
-    public  boolean isTriangle(int a, int b, int c) {
+    public  static boolean isTriangle(int a, int b, int c) {
 
 
         if (a > 0 || b > 0 || c > 0) {

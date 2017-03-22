@@ -32,10 +32,10 @@ public class MathFunkTest {
         Assert.assertEquals(isTrue, expRes == MathFunk.multiply(a, b));
     }
 
+    @FileParameters(RESOURCES_PATH + "multiply_parameters2.csv")
     @Test
-    public void multiplyNotEqualsTest() {
-        int a = 2, b = 3, expRes = 7;
-        Assert.assertNotEquals(expRes, MathFunk.multiply(a, b));
+    public void multiplyNotEqualsTest(int a, int b, int expRes) {
+                Assert.assertNotEquals(expRes, MathFunk.multiply(a, b));
     }
 
     @AfterClass
