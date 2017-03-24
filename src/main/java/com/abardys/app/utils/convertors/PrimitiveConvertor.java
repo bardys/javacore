@@ -3,18 +3,21 @@ package com.abardys.app.utils.convertors;
 /**
  * Created by anbar on 08-Feb-17.
  */
-/* public class PrimitiveConvertor {
-    char char1 = 3.14159
-    public void floatToChar() {
-        float1 = (float)char1
-        System.out.println(System.out.println(“Input float value is ” + {float_variable_name} + “. Output char value is “ + {char_variable_name});
+public class PrimitiveConvertor {
+    public void floatToChar(float float1) {
+        char char1 = 0;
+        char1 = (char)float1;
+        System.out.println("Input float value is " + float1 + ". Output char value is " + char1);
     }
-    intToChar{
-        System.out.println()
+    public void intToChar(int int1){
+        char char2 = 0;
+        char2 = (char) int1;
+        System.out.println("Input int value is " + int1 + ". Output char value is " + char2);
     }
-    charToInt{
-        System.out.println()
+    public void charToInt(char char3){
+        int int1 = 0;
+        int1 = (int) char3;
+        System.out.println("Input char value is " + char3 + ". Output int value is " + int1);
     }
 
 }
-*/
