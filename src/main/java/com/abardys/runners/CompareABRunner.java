@@ -1,7 +1,6 @@
 package com.abardys.runners;
 
-import com.abardys.app.lesson4.СompareCircleArea;
-import com.abardys.app.lesson6.CompareAB;
+import com.abardys.lesson6.CompareAB;
 
 import java.util.Scanner;
 

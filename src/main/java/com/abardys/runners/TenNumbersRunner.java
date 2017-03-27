@@ -1,6 +1,6 @@
 package com.abardys.runners;
 
-import com.abardys.app.lesson6.TenNumbers;
+import com.abardys.lesson6.TenNumbers;
 
 /**
  * Created by anbar on 23-Mar-17.

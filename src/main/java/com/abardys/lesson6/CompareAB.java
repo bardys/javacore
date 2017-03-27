@@ -1,4 +1,4 @@
-package com.abardys.app.lesson6;
+package com.abardys.lesson6;
 
 /**
  * Created by anbar on 23-Mar-17.
