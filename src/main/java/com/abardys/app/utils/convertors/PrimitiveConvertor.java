@@ -5,7 +5,7 @@ package com.abardys.app.utils.convertors;
  */
 public class PrimitiveConvertor {
     public static char floatToChar(float float1) {
-        char char1 = 0;
+        char char1;
         char1 = (char)float1;
         System.out.println("Input float value is " + float1 + ". Output char value is " + char1);
         return char1;
