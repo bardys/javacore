@@ -1,11 +1,8 @@
-package com.abardys.lesson10;
+package com.abardys.app.lesson10;
 
-/**
- * Created by anbar on 16-May-17.
- */
 public class EnigmaCode {
-    private static final String ALPHABET = "abc";
-    private static final String CODE = "efd";
+    private static final String ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ";
+    private static final String CODE = "QWERTYUIOPqwertyuiopASDFGHJKL 12345asdfghjklZXCVBNM67890zxcvbnm";
 
     private static String toEncode(String toCode, String original, String code) {
         String result = "";
@@ -18,7 +15,9 @@ public class EnigmaCode {
                 }
             }
         }
+        System.out.println(result);
         return result;
+
     }
 
     public static String encode(String s) {
