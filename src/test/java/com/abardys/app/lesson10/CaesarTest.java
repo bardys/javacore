@@ -17,8 +17,17 @@ public class CaesarTest {
 @Test
     public void first(){
     String s = "Hello world";
-    int n = 1;
-    String expRes = "Ifmmp0xpsme";
+    int n = 20;
+    String expRes = "by447JF7A4x";
     Assert.assertEquals(expRes, Caesar.toEncode(s, n));
 }
+    @Test
+    public void second(){
+        String s = "by447JF7A4x";
+        int n = 20;
+        String expRes = "Hello world";
+        Assert.assertEquals(expRes, Caesar.toDecode(s, n));
+    }
+
+
 }
