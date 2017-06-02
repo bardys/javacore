@@ -1,26 +1,50 @@
 package com.abardys.lesson11;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Created by anbar on 18-May-17.
  */
 public class ReadFile {
     public static void main(String[] args) {
+         BufferedReader br = null; FileReader fr = null; String sCurrentLine;
 
-        BufferedReader reader = new BufferedReader(
+        try {
 
-                new FileReader("D:\\input.txt"));
+            fr = new FileReader("D:/input.tx"); br = new BufferedReader(fr);
 
-        String line;
+            br = new BufferedReader(new FileReader("D:/input.tx"));
 
-        while ((line = reader.readLine()) != null) {
+            while ((sCurrentLine = br.readLine()) != null) {
 
-            System.out.println(line);
+                System.out.println(sCurrentLine);
 
-        }
+            }
 
-        reader.close();
+        } catch (FileNotFoundException e) {
+
+            System.out.println("Your file is not found " + e.getMessage());
+            e.printStackTrace();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        } finally {
+
+            try {
+
+                if (br != null) { br.close(); }
+
+                if (fr != null) { fr.close(); }
+
+            } catch (IOException ex) {
+
+                ex.printStackTrace();
+
+            } }
     }
 }
