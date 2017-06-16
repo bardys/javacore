@@ -3,27 +3,33 @@ package com.abardys.lesson13;
 /**
  * Created by anbar on 01-Jun-17.
  */
-public class Student extends Person{
+public class Student extends Person {
     private String university;
     private String response = "Ehhh, what was the question?";
 
-    public Student(String name, String university){ // constructor
+    public Student(String name, String university) { // constructor
         super(name); // call parent (super) class constructor
         this.university = university; // extend with new properties
 
     }
 
-    public String getResponse(){ // method
+    public String getResponse() { // method
         return response;
 
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(){
+    public void setName() {
         this.name = name;
+    }
+
+    @Override
+    public String getResponse(String question) {
+        return "Ehhh, what was the question?";
+
     }
 
 }

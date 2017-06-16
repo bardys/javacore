@@ -12,9 +12,6 @@ public class Teacher extends Person{
         this.lesson = lesson;
 
     }
-    @Override
-    public String eat(){}
-
     public final String teach(){
         return "Teach";
     }
@@ -22,5 +19,9 @@ public class Teacher extends Person{
     public static void main(String[] args) {
         Teacher t = new Teacher("sd", "dsds");
         System.out.println(t.eat());
+    }
+
+    public String lessonFinished(){
+        return "Do not forget to make homework!";
     }
 }
