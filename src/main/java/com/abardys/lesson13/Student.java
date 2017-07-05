@@ -13,18 +13,17 @@ public class Student extends Person {
 
     }
 
+
     public String getResponse() { // method
         return response;
 
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName() {
-        this.name = name;
-    }
+
+//    public void setName() {
+//        this.name = name;
+//    }
 
     @Override
     public String getResponse(String question) {
@@ -32,4 +31,8 @@ public class Student extends Person {
 
     }
 
+    public static void main(String[] args) {
+        Student student = new Student("Bill", "Chicago");
+        System.out.println(student.getName());
+    }
 }

@@ -11,7 +11,7 @@ public class Line {
     }
     public void addPixel(Pixel pixel){
         Pixel[] newLine = new Pixel[line.length+1];
-        for(int i = 0; i<line.length; i++){
+        for(int i = 0; i<newLine.length-1; i++){
             newLine[i] = line[i];
         }
         newLine[newLine.length-1] = pixel;

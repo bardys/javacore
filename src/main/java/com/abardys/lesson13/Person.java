@@ -4,7 +4,7 @@ package com.abardys.lesson13;
  * Created by anbar on 01-Jun-17.
  */
 public class Person {
-    protected String name;
+    private String name;
 
     public Person(String name) {
         this.name = name;
@@ -16,6 +16,9 @@ public class Person {
 
     public String getResponse(String question) {
         return "My answer is " + question;
+    }
+    public String getName() {
+        return name;
     }
 
 }

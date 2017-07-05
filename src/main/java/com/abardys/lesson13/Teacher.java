@@ -16,12 +16,16 @@ public class Teacher extends Person{
         return "Teach";
     }
 
-    public static void main(String[] args) {
-        Teacher t = new Teacher("sd", "dsds");
-        System.out.println(t.eat());
-    }
-
     public String lessonFinished(){
         return "Do not forget to make homework!";
     }
+
+
+    public static void main(String[] args) {
+        Teacher t = new Teacher("sd", "dsds");
+        System.out.println(t.eat());
+        System.out.println(t.teach());
+    }
+
+
 }
