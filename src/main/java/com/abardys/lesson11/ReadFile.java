@@ -14,9 +14,9 @@ public class ReadFile {
 
         try {
 
-            fr = new FileReader("D:/input.tx"); br = new BufferedReader(fr);
+            fr = new FileReader("D:/input.txt"); br = new BufferedReader(fr);
 
-            br = new BufferedReader(new FileReader("D:/input.tx"));
+            br = new BufferedReader(new FileReader("D:/input.txt"));
 
             while ((sCurrentLine = br.readLine()) != null) {
 
