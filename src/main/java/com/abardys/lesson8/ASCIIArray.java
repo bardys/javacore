@@ -1,4 +1,4 @@
-package com.abardys.runners;
+package com.abardys.lesson8;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class ASCIIArray {
     public static void main(String[] args) {
-        char a[] = new char[128];
+        char[] a = new char[128];
         for(int i = 0; i<a.length; i++){
             a[i] = (char) i;
         }
