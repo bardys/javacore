@@ -1,10 +1,10 @@
-package com.abardys.runners.homework;
+package com.abardys.lesson6.homework;
 
 /**
  * Created by anbar on 14-Apr-17.
  */
-public class Lesson6ARunner {
-    public static void main(String[] args) {
+public class Lesson6A {
+    public  static void lesson6A() {
         int counterA = 0;
         for (int i = 2; i <= 20; i += 2) {
             counterA++;

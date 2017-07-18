@@ -1,4 +1,4 @@
-package com.abardys.lesson14;
+package com.abardys.lesson14.homework;
 
 /**
  * Created by anbar on 16-Jun-17.

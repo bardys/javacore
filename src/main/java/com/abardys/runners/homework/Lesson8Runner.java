@@ -7,9 +7,12 @@ import com.abardys.lesson8.homework.Sorting;
  * Created by anbar on 17-Jul-17.
  */
 public class Lesson8Runner {
-    public static int[] a = {2,1,3};
 
-    public static void main(String[] args) {
+
+    public static void lesson8Runner() {
+
+        int[] a = {2,1,3};
+
         Sorting sorting = new Sorting();
         ArrayPrint arrayPrint = new ArrayPrint();
 

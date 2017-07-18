@@ -9,7 +9,7 @@ import java.util.List;
  * Created by anbar on 13-Jul-17.
  */
 public class Lesson16Runner {
-    public static void main(String[] args) {
+    public static void lesson16Runner() {
         List<Integer> intList = new ArrayList<>();
         intList.add(5);
         intList.add(2);

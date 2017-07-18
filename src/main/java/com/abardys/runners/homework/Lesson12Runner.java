@@ -1,17 +1,13 @@
 package com.abardys.runners.homework;
 
-import com.abardys.lesson12.Human;
-import com.abardys.lesson12.WhiteCollar;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import com.abardys.lesson12.homework.Human;
+import com.abardys.lesson12.homework.WhiteCollar;
 
 /**
  * Created by anbar on 21-Jun-17.
  */
 public class Lesson12Runner {
-    public static void main(String[] args) {
+    public static void lesson12Runner() {
         Human human = new Human(11, "John");
 
         System.out.println(human.getAge());

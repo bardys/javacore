@@ -1,4 +1,4 @@
-package com.abardys.lesson15;
+package com.abardys.lesson15.homework;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ import java.util.Scanner;
  * Created by anbar on 04-Jul-17.
  */
 public class FamousPeople {
-    public static void main(String[] args) {
+    public static void famousPeople() {
         Random rand = new Random();
 
         FamousPeopleEnum[] enumArray = new FamousPeopleEnum[5];

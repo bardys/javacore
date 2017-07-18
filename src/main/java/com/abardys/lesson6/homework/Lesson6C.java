@@ -1,12 +1,12 @@
-package com.abardys.runners.homework;
+package com.abardys.lesson6.homework;
 
 import java.util.Random;
 
 /**
  * Created by anbar on 14-Apr-17.
  */
-public class Lesson6CRunner {
-    public static void main(String[] args) {
+public class Lesson6C {
+    public static void lesson6C() {
         Random randC = new Random();
 
         int[] cArray = new int[15];
