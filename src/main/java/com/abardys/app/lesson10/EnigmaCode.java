@@ -5,18 +5,18 @@ public class EnigmaCode {
     private static final String CODE = "QWERTYUIOPqwertyuiopASDFGHJKL 12345asdfghjklZXCVBNM67890zxcvbnm";
 
     private static String toEncode(String toCode, String original, String code) {
-        String result = "";
+        StringBuilder result = new StringBuilder("");
         for (int i = 0; i < toCode.length(); i++) {
             char a = toCode.charAt(i);
             for (int j = 0; j < original.length(); j++) {
                 if (a == original.charAt(j)) {
-                    result += code.charAt(j);
+                    result.append(code.charAt(j));
                     break;
                 }
             }
         }
         System.out.println(result);
-        return result;
+        return result.toString();
 
     }
 

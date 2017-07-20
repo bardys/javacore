@@ -46,6 +46,8 @@ public class HomeTaskRunner {
                         Lesson9Runner.lesson9Runner();
                         break;
                     case TEN:
+                        Lesson10Runner.lesson10Runner();
+                        break;
                     case ELEVEN:
                     case TWELVE:
                         Lesson12Runner.lesson12Runner();

@@ -5,17 +5,18 @@ package com.abardys.lesson10;
  */
 public class StringPerformance {
     public static void main(String[] args) {
+        String c = "start";
+        String b = "finish";
 
         long start = System.currentTimeMillis();
-
-        String c = "start";
-
-        String b = "finish";
 
         for (long i = 0; i < 100000L; i++) {
             c = c.concat(b);
         }
 
+        long end = System.currentTimeMillis();
+
+        System.out.println(end - start);
 
     }
 }
