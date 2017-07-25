@@ -11,40 +11,23 @@ import java.io.IOException;
 public class ReadFile {
     public static void main(String[] args) {
          BufferedReader br = null; FileReader fr = null; String sCurrentLine;
-
         try {
-
             fr = new FileReader("D:/input.txt"); br = new BufferedReader(fr);
-
-            br = new BufferedReader(new FileReader("D:/input.txt"));
-
             while ((sCurrentLine = br.readLine()) != null) {
-
                 System.out.println(sCurrentLine);
-
             }
-
         } catch (FileNotFoundException e) {
-
             System.out.println("Your file is not found " + e.getMessage());
             e.printStackTrace();
-
         } catch (IOException e) {
-
             e.printStackTrace();
-
         } finally {
-
             try {
-
                 if (br != null) { br.close(); }
-
                 if (fr != null) { fr.close(); }
-
             } catch (IOException ex) {
-
                 ex.printStackTrace();
-
-            } }
+            }
+        }
     }
 }
