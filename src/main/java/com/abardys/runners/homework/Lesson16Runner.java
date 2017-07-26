@@ -1,6 +1,7 @@
 package com.abardys.runners.homework;
 
 import com.abardys.lesson16.ArraySorterGenerics;
+import com.abardys.lesson16.SortedWords;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +27,7 @@ public class Lesson16Runner {
         System.out.println(intArraySorterGenerics.getMyList());
         ArraySorterGenerics doubleArraySorterGenerics = new ArraySorterGenerics(doubleList);
         System.out.println(doubleArraySorterGenerics.getMyList());
+
+        SortedWords.sortedWords();
     }
 }

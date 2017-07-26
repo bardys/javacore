@@ -9,20 +9,19 @@ public class SortedWords {
     public static SortedSet<String> stringSet = new TreeSet<>();
     public static List<String> stringList = new ArrayList<>();
 
-    public void addToStringSet(String word) {
+    public static void addToStringSet(String word) {
         stringSet.add(word);
     }
 
 
 
-    public static void main(String[] args) {
-        SortedWords sortedWords = new SortedWords();
-        while (true) {
+    public static void sortedWords() {
+                while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Input words or press Enter for exit");
             String word = scanner.nextLine();
             if (!word.equals("")) {
-                sortedWords.addToStringSet(word);
+                addToStringSet(word);
             } else {
                 break;
             }
