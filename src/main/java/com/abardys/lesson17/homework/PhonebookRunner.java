@@ -2,7 +2,10 @@ package com.abardys.lesson17.homework;
 
 import java.util.Scanner;
 
+
+
 import static com.abardys.lesson17.homework.Category.names;
+import static com.abardys.lesson17.homework.Name.phones;
 import static com.abardys.lesson17.homework.Phonebook.categories;
 
 /**
@@ -14,8 +17,9 @@ public class PhonebookRunner {
 
         Scanner scanner = new Scanner(System.in);
         String cat = "";
+        boolean categoryFlag = true;
 
-        if(categories.size() != 0) {
+        if(!categories.isEmpty()) {
             System.out.println("Your categories:");
             for (Object element : categories) {
                 System.out.println(element);
@@ -29,16 +33,35 @@ public class PhonebookRunner {
             cat = scanner.nextLine();
 
             if (!cat.equals("exit") && !cat.equals("")) {
-                for (Object categoryElement : categories) {
-                    if (!cat.equals(Category.getCategoryName())) {
-                        Phonebook.addCategory(cat);
-                    } else {
-                        for (Object nameElement : names) {
-                            System.out.println(Name.getNameName());
-                            System.out.println(Name.getPhones());
+                if(!categories.isEmpty()) {
+                    for (int i = 0; i<categories.size(); i++) {
+                        categoryFlag = false;
+                        Object ct = categories.get(i);
+                        if (cat.equals(Category.getCategoryName())) {
+                            if (!names.isEmpty()) {
+                                for (Object nameElement : names) {
+                                    System.out.println(Name.getNameName());
+                                    if (!phones.isEmpty()) {
+                                        System.out.println(Name.getPhones());
+
+                                    } else {
+                                        System.out.println("No phones for this name");
+                                    }
+                                }
+                            } else {
+                                System.out.println("No names in this category");
+                            }
+                            categoryFlag = true;
+                            break;
                         }
                     }
-                }
+                    if(categoryFlag == false){
+                        Phonebook.addCategory(cat);
+                        System.out.println("No names in this category");
+                    }
+
+                }else{Phonebook.addCategory(cat);
+                    System.out.println("No names in this category");}
             }else{
                 System.out.println("Bye!");
                 break;
