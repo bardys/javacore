@@ -1,12 +1,6 @@
-package com.abardys.lesson17.homework;
+package com.abardys.drafts;
 
 import java.util.Scanner;
-
-
-
-import static com.abardys.lesson17.homework.Category.names;
-import static com.abardys.lesson17.homework.Name.phones;
-import static com.abardys.lesson17.homework.Phonebook.categories;
 
 /**
  * Created by anbar on 26-Jul-17.
@@ -19,9 +13,9 @@ public class PhonebookRunner {
         String cat = "";
         boolean categoryFlag = true;
 
-        if(!categories.isEmpty()) {
+        if(!PhonebookObjects.categories.isEmpty()) {
             System.out.println("Your categories:");
-            for (Object element : categories) {
+            for (Object element : PhonebookObjects.categories) {
                 System.out.println(element);
             }
         }else{
@@ -33,15 +27,15 @@ public class PhonebookRunner {
             cat = scanner.nextLine();
 
             if (!cat.equals("exit") && !cat.equals("")) {
-                if(!categories.isEmpty()) {
-                    for (int i = 0; i<categories.size(); i++) {
+                if(!PhonebookObjects.categories.isEmpty()) {
+                    for (int i = 0; i< PhonebookObjects.categories.size(); i++) {
                         categoryFlag = false;
-                        Object ct = categories.get(i);
+                        Object ct = PhonebookObjects.categories.get(i);
                         if (cat.equals(Category.getCategoryName())) {
-                            if (!names.isEmpty()) {
-                                for (Object nameElement : names) {
+                            if (!Category.names.isEmpty()) {
+                                for (Object nameElement : Category.names) {
                                     System.out.println(Name.getNameName());
-                                    if (!phones.isEmpty()) {
+                                    if (!Name.phones.isEmpty()) {
                                         System.out.println(Name.getPhones());
 
                                     } else {
@@ -56,11 +50,12 @@ public class PhonebookRunner {
                         }
                     }
                     if(categoryFlag == false){
-                        Phonebook.addCategory(cat);
+                        PhonebookObjects.addCategory(cat);
                         System.out.println("No names in this category");
                     }
 
-                }else{Phonebook.addCategory(cat);
+                }else{
+                    PhonebookObjects.addCategory(cat);
                     System.out.println("No names in this category");}
             }else{
                 System.out.println("Bye!");

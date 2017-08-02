@@ -67,8 +67,8 @@ public class HomeTaskRunner {
                         Lesson16Runner.lesson16Runner();
                         break;
                     case SEVENTEEN:
-
-
+                        Lesson17Runner.lesson17Runner();
+                        break;
                 }
 
             } catch (IllegalArgumentException e) {

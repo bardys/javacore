@@ -1,4 +1,4 @@
-package com.abardys.lesson17.homework;
+package com.abardys.drafts;
 
 import java.util.Map;
 
