@@ -13,7 +13,7 @@ public class WriteFile {
     public static void main(String[] args) throws IOException {
         BufferedWriter bw = null; FileWriter fw = null;
         try {
-            String data = "\r\n This is new content";
+            String data = "\r\nThis is new content";
             File file = new File(FILENAME); // if file not exists => create it
             if (!file.exists()) {
                 file.createNewFile();
