@@ -1,7 +1,11 @@
-package com.abardys.finalProject;
+package com.abardys.app.finalProject;
 
 import java.io.*;
 import java.util.*;
+
+import static com.abardys.app.finalProject.Headers.COURSE;
+import static com.abardys.app.finalProject.Headers.FACULTY;
+import static com.abardys.app.finalProject.Headers.POSITION;
 
 /**
  * Created by anbar on 02-Aug-17.
@@ -21,7 +25,7 @@ public class University {
         return headersArray;
     }
 
-    public static void readFile() {
+    public static int readFile() {
         BufferedReader br = null;
         FileReader fr = null;
         String line;
@@ -60,9 +64,11 @@ public class University {
                 ex.printStackTrace();
             }
         }
+        return 1;
     }
 
-    public static void addPersone() {
+    public static List<Map> addPersone() {
+        List<Map> forTestsList = new ArrayList<>();
         while (true) {
             String val;
             QualificationWithCourse qualificationWithCourse = null;
@@ -92,7 +98,7 @@ public class University {
                         if (newLineMap.containsKey(a)) {
                             break;
                         }else{
-                            System.out.println("Wrong course!");
+                            System.out.println("Wrong course! Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\"");
                         }
                     }
                 }else if(i == 8) {
@@ -119,7 +125,7 @@ public class University {
                             if (newLineMap.containsKey(a)) {
                                 break;
                             } else {
-                                System.out.println("Wrong qualification!");
+                                System.out.println("Wrong qualification! Enter \"АСПИРАНТ\", \"МАГИСТР\" or \"СПЕЦИАЛИСТ\"");
                             }
                         }
                     }
@@ -136,11 +142,13 @@ public class University {
 
             universityList.add(newLineMap);
             tempUniversityList.add(newLineMap);
+            forTestsList.add(newLineMap);
             System.out.println("New person was added! Continue adding? (y/n)");
             val = scanner.nextLine();
             if(val.equals("y")){continue;}else{break;}
 
         }
+        return forTestsList;
     }
 
     public static void searchMenu() {
@@ -271,8 +279,111 @@ public class University {
             if (searchParameter.toLowerCase().equals(cell.toLowerCase())) {
                 displayResults(searchMap);
                 String val;
+                String forS = "start";
+                String forSkippedCourse;
+                String forCourse = "start";
+                String forSpace = "start";
+                String forCoursQualification = "start";
+                String forNotCourseQualification = "start";
+                QualificationWithCourse qualificationWithCourse = null;
                 for (int j = 0; j < enumToArray().length; j++) {
+
+
+
+                    if(j == 7) {
+                        while (true) {
+                            Headers a = enumToArray()[j];
+                            System.out.println("Enter " + a + " or \"s\" to skip:");
+                            val = scanner.nextLine();
+                            if (!val.equals("")){
+                                if(val.equals("s")){
+                                    if(!searchMap.get(COURSE).equals(" ")) {
+                                        forSkippedCourse = searchMap.get(COURSE).toString();
+                                        QualificationWithCourse[] skippedCourseArray = QualificationWithCourse.values();
+                                        for (int l = 0; l < skippedCourseArray.length; l++) {
+                                            qualificationWithCourse = QualificationWithCourse.values()[l];
+                                            String course = qualificationWithCourse.getCourse();
+                                            if (course.equals(forSkippedCourse)) {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    forS = val;
+                                    break;
+                                }else{
+                                    QualificationWithCourse[] qualificationWithCourseArray = QualificationWithCourse.values();
+                                    for (int n = 0; n < qualificationWithCourseArray.length; n++) {
+                                        qualificationWithCourse = QualificationWithCourse.values()[n];
+                                        String course = qualificationWithCourse.getCourse();
+                                        if (course.equals(val)) {
+                                            searchMap.put(a, val);
+                                            forCourse = "seted";
+                                            break;
+                                        }
+                                        qualificationWithCourse = null;
+                                    }
+                                }
+
+                            }else{
+                                val = " ";
+                                searchMap.put(a, val);
+                                forSpace = "seted";
+                                break;
+                            }
+                            if (forCourse.equals("seted")) {
+                                break;
+                            }else{
+                                System.out.println("Wrong course! Enter \"1\", \"2\", \"3\", \"4\", \"5\" or \"6\"");
+                            }
+                        }
+                    }else if(j == 8) {
+                        Headers a = enumToArray()[j];
+                        if (qualificationWithCourse != null) {
+                            System.out.println(a + ":");
+                            System.out.println(qualificationWithCourse);
+                            searchMap.put(a, qualificationWithCourse.toString());
+                            forCoursQualification = "seted";
+                        }else{
+                            while(true) {
+                                System.out.println("Enter " + a + " or \"s\" to skip:");
+                                val = scanner.nextLine();
+                                if (val.equals("")) {
+                                    val = " ";
+                                    searchMap.put(a, val);
+                                    forSpace = "seted";
+                                    break;
+                                } else {
+                                    if(val.equals("s")){
+                                        forS = val;
+                                        break;
+                                    }else{
+                                        QualificationWithOutCourse[] qualificationWithOutCourse = QualificationWithOutCourse.values();
+                                        for (QualificationWithOutCourse value : qualificationWithOutCourse) {
+                                            if (val.toUpperCase().equals(value.toString())) {
+                                                searchMap.put(a, val.toUpperCase());
+                                                forNotCourseQualification = "seted";
+                                            }
+                                        }
+                                    }
+
+                                }
+                                if (forNotCourseQualification.equals("seted")) {
+                                    break;
+                                } else {
+                                    System.out.println("Wrong qualification! Enter \"АСПИРАНТ\", \"МАГИСТР\" or \"СПЕЦИАЛИСТ\"");
+                                }
+                            }
+                        }
+                    }
                     Headers a = enumToArray()[j];
+                    if(forS.equals("s")){forS = "start"; continue;}
+                    if(forCourse.equals("seted")){forCourse = "start"; continue;}
+                    if(forSpace.equals("seted")){forSpace = "start"; continue;}
+                    if(forCoursQualification.equals("seted")){forCoursQualification = "start"; continue;}
+                    if(forNotCourseQualification.equals("seted")){forNotCourseQualification = "start"; continue;}
+
+
+
                     System.out.println("Enter " + a + " or \"s\" to skip:");
                     val = scanner.nextLine();
                     if(val.equals("")){val = " ";
@@ -284,7 +395,31 @@ public class University {
         }
     }
 
+    public static void information() {
+        System.out.println("What information do you want to see?");
+        System.out.println("To see unique " + enumToArray()[9] + " press \"1\"");
+        System.out.println("To see unique " + enumToArray()[4] + " press \"2\"");
+        String informationChoice = scanner.nextLine();
+        Set<String> positionSet = new HashSet<>();
 
+        if(informationChoice.equals("1")){
+            for (Map informationMap : universityList) {
+                if (!informationMap.get(POSITION).equals(" ")) {
+                    positionSet.add(informationMap.get(POSITION).toString());
+                }
+            }
+        }else if(informationChoice.equals("2")){
+            for (Map informationMap : universityList) {
+                positionSet.add(informationMap.get(FACULTY).toString());
+            }
+        }else{
+            System.out.println("Wrong enter");
+        }
+
+        for (String position : positionSet) {
+            System.out.println(position);
+        }
+    }
 
     public static void displayResults(Map toDisplayMap) {
         StringBuilder row = new StringBuilder();
@@ -333,12 +468,5 @@ public class University {
             }
         }
         System.out.println("Done");
-    }
-
-    public static void main(String[] args) {
-        readFile();
-        addPersone();
-        writeFile();
-
     }
 }

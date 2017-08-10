@@ -1,4 +1,4 @@
-package com.abardys.finalProject;
+package com.abardys.app.finalProject;
 
 /**
  * Created by anbar on 02-Aug-17.
