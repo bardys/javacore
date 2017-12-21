@@ -17,13 +17,13 @@ public class CompareCircleAreaTest {
 
     @Before
     public void setUp() {
-        СompareCircleArea compareCircleArea = new СompareCircleArea();
+        CompareCircleArea compareCircleArea = new CompareCircleArea();
     }
 
     @FileParameters(RESOURCES_PATH + "СompareCircleArea_parameters.csv")
     @Test
     public void FirstBigger21Test(double radius1, double radius2, int expRes, boolean isTrue) {
-        Assert.assertEquals(isTrue, expRes == СompareCircleArea.calculateBigger(radius1, radius2));
+        Assert.assertEquals(isTrue, expRes == CompareCircleArea.calculateBigger(radius1, radius2));
     }
 
     @Ignore("Used as parameter")
@@ -32,7 +32,7 @@ public class CompareCircleAreaTest {
         double radius1 = 1;
         double radius2 = 2;
         int expRes = 2;
-        Assert.assertEquals(expRes, СompareCircleArea.calculateBigger(radius1, radius2));
+        Assert.assertEquals(expRes, CompareCircleArea.calculateBigger(radius1, radius2));
     }
 
     @Ignore("Used as parameter")
@@ -41,7 +41,7 @@ public class CompareCircleAreaTest {
         double radius1 = 2;
         double radius2 = 2;
         int expRes = 3;
-        Assert.assertEquals(expRes, СompareCircleArea.calculateBigger(radius1, radius2));
+        Assert.assertEquals(expRes, CompareCircleArea.calculateBigger(radius1, radius2));
     }
 
     @Ignore("Used as parameter")
@@ -50,7 +50,7 @@ public class CompareCircleAreaTest {
         double radius1 = -1;
         double radius2 = -2;
         int expRes = 2;
-        Assert.assertEquals(expRes, СompareCircleArea.calculateBigger(radius1, radius2));
+        Assert.assertEquals(expRes, CompareCircleArea.calculateBigger(radius1, radius2));
     }
 
     @Ignore("Used as parameter")
@@ -59,7 +59,7 @@ public class CompareCircleAreaTest {
         double radius1 = 0.2;
         double radius2 = 0.1;
         int expRes = 1;
-        Assert.assertEquals(expRes, СompareCircleArea.calculateBigger(radius1, radius2));
+        Assert.assertEquals(expRes, CompareCircleArea.calculateBigger(radius1, radius2));
     }
 
     @Ignore("Used as parameter")
@@ -68,7 +68,7 @@ public class CompareCircleAreaTest {
         double radius1 = 0.1;
         double radius2 = 0.2;
         int expRes = 2;
-        Assert.assertEquals(expRes, СompareCircleArea.calculateBigger(radius1, radius2));
+        Assert.assertEquals(expRes, CompareCircleArea.calculateBigger(radius1, radius2));
     }
 
     @Ignore("Used as parameter")
@@ -77,6 +77,6 @@ public class CompareCircleAreaTest {
         double radius1 = 0.2;
         double radius2 = 0.2;
         int expRes = 3;
-        Assert.assertEquals(expRes, СompareCircleArea.calculateBigger(radius1, radius2));
+        Assert.assertEquals(expRes, CompareCircleArea.calculateBigger(radius1, radius2));
     }
 }

@@ -1,10 +1,10 @@
 package com.abardys.runners;
 
-import com.abardys.app.lesson4.СompareCircleArea;
+import com.abardys.app.lesson4.CompareCircleArea;
 
 import java.util.Scanner;
 
-import static com.abardys.app.lesson4.СompareCircleArea.calculateBigger;
+import static com.abardys.app.lesson4.CompareCircleArea.calculateBigger;
 
 /**
  * Created by anbar on 17-Feb-17.
@@ -16,6 +16,6 @@ public class CompareCircleAreaRunner {
         double radius1 = scanner.nextDouble();
         System.out.println("Input radius2: ");
         double radius2 = scanner.nextDouble();
-        СompareCircleArea.calculateBigger(radius1, radius2);
+        CompareCircleArea.calculateBigger(radius1, radius2);
     }
 }

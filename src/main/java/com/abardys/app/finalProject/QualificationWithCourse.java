@@ -4,12 +4,12 @@ package com.abardys.app.finalProject;
  * Created by anbar on 08-Aug-17.
  */
 public enum QualificationWithCourse {
-    СТУДЕНТ1("1"),
-    СТУДЕНТ2("2"),
-    СТУДЕНТ3("3"),
-    СТУДЕНТ4("4"),
-    БАКАЛАВР5("5"),
-    БАКАЛАВР6("6");
+    STUDENT1("1"),
+    STUDENT2("2"),
+    STUDENT3("3"),
+    STUDENT4("4"),
+    BAKALAVR5("5"),
+    BAKALAVR6("6");
 
     private String course;
 

@@ -125,7 +125,7 @@ public class University {
                             if (newLineMap.containsKey(a)) {
                                 break;
                             } else {
-                                System.out.println("Wrong qualification! Enter \"АСПИРАНТ\", \"МАГИСТР\" or \"СПЕЦИАЛИСТ\"");
+                                System.out.println("Wrong qualification! Enter \"ASPIRANT\", \"MAHISTR\" or \"SPETSIALIST\"");
                             }
                         }
                     }
@@ -370,7 +370,7 @@ public class University {
                                 if (forNotCourseQualification.equals("seted")) {
                                     break;
                                 } else {
-                                    System.out.println("Wrong qualification! Enter \"АСПИРАНТ\", \"МАГИСТР\" or \"СПЕЦИАЛИСТ\"");
+                                    System.out.println("Wrong qualification! Enter \"ASPIRANT\", \"MAHISTR\" or \"SPETSIALIST\"");
                                 }
                             }
                         }
