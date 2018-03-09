@@ -15,10 +15,10 @@ public class RozetkaHomePage extends RozetkaAbstractPage{
 //    }
 
     @FindBy(name = "signin")
-    WebElement signinBtn;
+    public WebElement signinBtn;
 
     @FindBy(linkText = "Зарегистрироваться")
-    WebElement signupBtn;
+    public WebElement signupBtn;
 
 
     public void openRegistrationForm() {

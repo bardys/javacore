@@ -2,6 +2,9 @@ package com.abardys.app.Selenium.tests.rozetkaTests;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -16,11 +19,32 @@ import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 public class RozetkaBaseTest {
+
+    public RozetkaBaseTest(){
+        setUp();
+    }
     public WebDriver driver;
     private static final String BROWSER = System.getProperty("browser");
     private static final String OS = System.getProperty("os.name").toLowerCase();
     private static final String CHROME_PATH_MAC = "src\\test\\java\\resources\\drivers\\chromedriver\\chromedriver";
     private static final String CHROME_PATH_WIN = "src\\test\\java\\resources\\drivers\\chromedriver\\chromedriver.exe";
+
+
+    @Rule
+    public TestWatcher screenshotOnFail = new TestWatcher() {
+        @Override
+        protected void failed(Throwable e, Description description) {
+            saveImageAttach("Screenshot on failure");
+        }
+
+        @Override
+        protected void finished(Description description){
+            driver.quit();
+        }
+    };
+
+
+
 
     @Before
     public void setUp(){
@@ -41,8 +65,9 @@ public class RozetkaBaseTest {
 
     @After
     public void tearDown(){
-        saveImageAttach("screenshot from " + BROWSER);
-        driver.quit();
+        //moved to TestWatcher
+        //saveImageAttach("screenshot from " + BROWSER);
+//        driver.quit();
     }
 
 
@@ -70,4 +95,5 @@ public class RozetkaBaseTest {
     private static boolean isMac() {return (OS.contains("mac"));}
 
     public static boolean isUnix() {return (OS.contains("nix") || OS.contains("nux") || OS.contains("aix"));}
+
 }

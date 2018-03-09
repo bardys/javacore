@@ -44,7 +44,7 @@ public class RozetkaRegisterPage extends RozetkaAbstractPage{
 
 
 
-    public void clickOnSubmitBtn() throws InterruptedException {
+    public void clickOnSubmitBtn() {
         submitBtn.click();
 
 //        Thread.sleep(5000);
