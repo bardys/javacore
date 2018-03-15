@@ -23,7 +23,7 @@ public class RozetkaRegistrationTest extends RozetkaBaseTest {
         navigateTo(RozetkaAbstractPage.BASE_URL);
         rozetkaHomePage.openRegistrationForm();
         rozetkaRegisterPage.fillField(rozetkaRegisterPage.nameField, "Mark Cook");
-        rozetkaRegisterPage.fillField(rozetkaRegisterPage.mailField, "markCook42@gmail.com");
+        rozetkaRegisterPage.fillField(rozetkaRegisterPage.mailField, "markCook47@gmail.com");
         rozetkaRegisterPage.fillField(rozetkaRegisterPage.passwordField, "Mark2000");
         rozetkaRegisterPage.clickOnSubmitBtn();
 

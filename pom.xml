@@ -64,6 +64,11 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.19.1</version>
                     <configuration>
+                        <!-- parallelization section start -->
+                        <parallel>methods</parallel>
+                        <threadCount>3</threadCount>
+                        <perCoreThreadCount>false</perCoreThreadCount>
+                        <!-- parallelization section end -->
                         <testFailureIgnore>false</testFailureIgnore>
                         <argLine>
                             -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar

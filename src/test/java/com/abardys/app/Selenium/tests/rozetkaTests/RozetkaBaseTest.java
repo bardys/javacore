@@ -10,38 +10,46 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import ru.yandex.qatools.allure.annotations.Attachment;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 public class RozetkaBaseTest {
 
-    public RozetkaBaseTest(){
-        setUp();
-    }
+//    public RozetkaBaseTest(){
+//        setUp();
+//    }
     public WebDriver driver;
     private static final String BROWSER = System.getProperty("browser");
+    private static String REMOTE = System.getProperty("remote");
+    private static String REMOTE_URL = "http://localhost:4444/wd/hub";
     private static final String OS = System.getProperty("os.name").toLowerCase();
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+
     private static final String CHROME_PATH_MAC = "src\\test\\java\\resources\\drivers\\chromedriver\\chromedriver";
     private static final String CHROME_PATH_WIN = "src\\test\\java\\resources\\drivers\\chromedriver\\chromedriver.exe";
 
 
-    @Rule
-    public TestWatcher screenshotOnFail = new TestWatcher() {
-        @Override
-        protected void failed(Throwable e, Description description) {
-            saveImageAttach("Screenshot on failure");
-        }
-
-        @Override
-        protected void finished(Description description){
-            driver.quit();
-        }
-    };
+//    @Rule
+//    public TestWatcher screenshotOnFail = new TestWatcher() {
+//        @Override
+//        protected void failed(Throwable e, Description description) {
+//            saveImageAttach("Screenshot on failure");
+//        }
+//
+//        @Override
+//        protected void finished(Description description){
+//            driver.quit();
+//        }
+//    };
 
 
 
@@ -50,13 +58,23 @@ public class RozetkaBaseTest {
     public void setUp(){
         if (BROWSER == null || BROWSER.equalsIgnoreCase("Firefox") || BROWSER.equalsIgnoreCase("")){
             this.driver = new FirefoxDriver();
+            capabilities.setBrowserName("firefox");
         }else if (BROWSER.equalsIgnoreCase("Chrome")) {
             if (isWindows()){
                 System.setProperty("webdriver.chrome.driver", CHROME_PATH_WIN);
             }else if (isMac()){
                 System.setProperty("webdriver.chrome.driver", CHROME_PATH_MAC);
             }
+            capabilities.setBrowserName("chrome");
             this.driver = new ChromeDriver();
+        }
+
+        if(REMOTE !=null && REMOTE.equalsIgnoreCase("true")) {
+            try {
+                this.driver = new RemoteWebDriver(new URL(REMOTE_URL), capabilities);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
 
         driver.manage().window().maximize();
@@ -66,8 +84,8 @@ public class RozetkaBaseTest {
     @After
     public void tearDown(){
         //moved to TestWatcher
-        //saveImageAttach("screenshot from " + BROWSER);
-//        driver.quit();
+        saveImageAttach("screenshot from " + BROWSER);
+        driver.quit();
     }
 
 
