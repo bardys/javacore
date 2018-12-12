@@ -2,6 +2,7 @@ package com.abardys.app.lesson3;
 import com.abardys.app.lesson3.MathFunk;
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;
+import junitparams.mappers.CsvWithHeaderMapper;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,7 +27,8 @@ public class MathFunkTest {
         int1++;
     }
 
-    @FileParameters(RESOURCES_PATH + "multiply_parameters.csv")
+    @FileParameters(value = RESOURCES_PATH + "multiply_parameters.csv",
+            mapper = CsvWithHeaderMapper.class)
     @Test
     public void multiplyTest(int a, int b, int expRes, boolean isTrue) {
         Assert.assertEquals(isTrue, expRes == MathFunk.multiply(a, b));
