@@ -108,9 +108,9 @@ public class RozetkaBaseTest {
         driver.navigate().to(url);
     }
 
-    private static boolean isWindows() {return (OS.contains("win"));}
+    public static boolean isWindows() {return (OS.contains("win"));}
 
-    private static boolean isMac() {return (OS.contains("mac"));}
+    public static boolean isMac() {return (OS.contains("mac"));}
 
     public static boolean isUnix() {return (OS.contains("nix") || OS.contains("nux") || OS.contains("aix"));}
 

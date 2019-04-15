@@ -14,10 +14,10 @@ public class RozetkaHomePage extends RozetkaAbstractPage{
 //        super(driver, BASE_URL);
 //    }
 
-    @FindBy(name = "signin")
+    @FindBy(xpath = "//a[text()=' увійдіть в особистий кабінет ']")
     public WebElement signinBtn;
 
-    @FindBy(linkText = "Зарегистрироваться")
+    @FindBy(xpath = "//a[text()='Зареєструватися']")
     public WebElement signupBtn;
 
 

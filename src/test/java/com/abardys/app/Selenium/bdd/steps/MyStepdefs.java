@@ -7,24 +7,36 @@ import com.abardys.app.Selenium.pages.rozetkaPages.RozetkaRegisterPage;
 import com.abardys.app.Selenium.tests.BaseTest;
 import com.abardys.app.Selenium.tests.rozetkaTests.RozetkaBaseTest;
 import cucumber.api.PendingException;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
 public class MyStepdefs extends RozetkaBaseTest{
+
+
     RozetkaHomePage rozetkaHomePage = PageFactory.initElements(driver, RozetkaHomePage.class);
     RozetkaRegisterPage rozetkaRegisterPage = PageFactory.initElements(driver, RozetkaRegisterPage.class);
     RozetkaAccountPage rozetkaAccountPage = PageFactory.initElements(driver, RozetkaAccountPage.class);
 
     @Given("^I am on main page$")
     public void iAmOnMainPage() {
-        navigateTo(RozetkaAbstractPage.BASE_URL);
+        setUp();
+        driver.navigate().to("https://rozetka.com.ua/");
 
     }
 
@@ -62,6 +74,8 @@ public class MyStepdefs extends RozetkaBaseTest{
         rozetkaAccountPage.assertHeader(title);
         driver.quit();
     }
+
+
 
 
 }

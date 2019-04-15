@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.awt.*;
 import java.awt.event.InputEvent;
 
-public class DragDropTest {
+public class  DragDropTest {
     WebDriver driver;
     By fromLoc = By.id("one");
     By toLoc = By.id("bin");
