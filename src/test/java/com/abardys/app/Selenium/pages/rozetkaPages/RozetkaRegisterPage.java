@@ -26,7 +26,7 @@ public class RozetkaRegisterPage extends RozetkaAbstractPage{
     @FindBy(name = "password")
     public WebElement passwordField;
 
-    @FindBy(xpath = "//button[@type='submit' and text()='Зарегистрироваться']")
+    @FindBy(xpath = "//button[@type='submit' and text()='Зареєструватися']")
     public WebElement submitBtn;
 
 
