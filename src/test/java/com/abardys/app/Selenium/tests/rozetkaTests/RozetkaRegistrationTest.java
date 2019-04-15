@@ -30,7 +30,7 @@ public class RozetkaRegistrationTest extends RozetkaBaseTest {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='personal_information']//h1")));
 
-        rozetkaAccountPage.assertHeader("Личные данные");
+        rozetkaAccountPage.assertHeader("Особисті дані");
 
 //        RozetkaHomePage rozetkaHomePage = new RozetkaHomePage(driver);
 //        RozetkaRegisterPage rozetkaRegisterPage = rozetkaHomePage.openRegistrationForm();
